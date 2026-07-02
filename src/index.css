@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer components{
+    .btn{
+        @apply px-5 py-2.5 border cursor-pointer rounded-lg hover:bg-neutral-300 active:bg-white transition-all;
+    }
+    .btn-primary{
+        @apply bg-[#198754] hover:bg-[#157146] active:bg-[#198754] text-white border-none;
+    }
+    .btn-secondary{
+        @apply bg-neutral-200 hover:bg-neutral-300 active:bg-neutral-200 text-black border-none;
+    }
+    .btn-on{
+        @apply bg-[#198754] hover:bg-[#157146] active:bg-[#198754] text-white border-none;
+    }
+    .btn-off{
+        @apply bg-[#dc3545] hover:bg-[#b52d3a] active:bg-[#dc3545] text-white border-none;
+    }
+    input {
+        @apply border border-neutral-700 rounded-lg px-5 py-2.5;
+    }
+}
