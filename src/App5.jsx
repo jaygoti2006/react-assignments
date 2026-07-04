@@ -95,7 +95,7 @@ function App() {
     const [inputText, setInputText] = useState("");
     const [messages, setMessages] = useState((localStorage.getItem("messages")) ? JSON.parse(localStorage.getItem("messages")):[]);
     const [isLoading, setIsLoading] = useState(false);
-    const [chatBoxPos, setChatBoxPos] = useState("top");
+    const [chatBoxPos, setChatBoxPos] = useState("bottom");
     useEffect(()=>{
         if(!isLoading) localStorage.setItem("messages",JSON.stringify(messages));
     },[messages,isLoading]);
@@ -107,7 +107,7 @@ function App() {
 
     return (
         <div className="w-full h-dvh max-w-160 mx-auto p-5 flex flex-col gap-5">
-            <div className={`flex grow ${(chatBoxPos==="top") ? "flex-col" : "flex-col-reverse"} gap-5`}>
+            <div className={`flex grow shrink min-h-0 ${(chatBoxPos==="top") ? "flex-col" : "flex-col-reverse"} gap-5`}>
                 <InputContainer inputText={inputText} setInputText={setInputText} messages={messages} setMessages={setMessages} isLoading={isLoading} setIsLoading={setIsLoading} />
                 <MessagesContainer messages={messages} chatBoxPos={chatBoxPos}/>
             </div>
